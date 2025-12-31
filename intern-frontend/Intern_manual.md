@@ -1,3 +1,7 @@
+# 고려대학교 소프트웨어보안연구소 인턴 가이드
+
+- 작성자: 김선규 연구원 (kl204@korea.ac.kr)
+
 # React 프로젝트 환경 설정 가이드 (Windows)
 
 본 문서는 Windows 환경에서 React 기반 프로젝트를 처음 실행하기 위한
@@ -23,6 +27,8 @@ Node.js 다운로드: https://nodejs.org
 
 ## 3. 정상 작동 확인
 
-3-1 npm run dev 명령어로 페이지 정상 동작하는지 확인
+3-1 npm run dev 명령어로 페이지 정상 동작하는지 확인 (http://localhost:3000/)
 
 ---
+
+## 4.

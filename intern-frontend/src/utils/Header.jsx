@@ -59,7 +59,7 @@ export const Header = () => {
       >
         {/* Logo */}
         <Link
-          href="https://iotcube.net/"
+          href="http://localhost:3000/"
           underline="none"
           sx={{
             fontSize: 24,

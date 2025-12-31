@@ -21,7 +21,7 @@ export const ComingSoon = () => {
       <ConstructionIcon sx={{ fontSize: 80, color: "#fbbf24", mb: 2 }} />
 
       <Typography variant="h4" sx={{ mb: 1, fontWeight: "bold" }}>
-        🐣 Coming Soon!!
+        Not Available Page!
       </Typography>
 
       <Button

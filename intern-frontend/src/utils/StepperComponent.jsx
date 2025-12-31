@@ -15,7 +15,7 @@ import useClientData from "../stores/useClientData";
 // 아이콘 커스터마이징: 마지막 스텝에만 아이콘 적용
 const CustomStepIcon = (props) => {
   const { active, completed, icon } = props;
-  const index = Number(icon) - 1; // "1" → 0번 인덱스
+  const index = Number(icon) - 0; // "1" → 0번 인덱스
 
   return (
     <Box
@@ -53,67 +53,55 @@ const StepperComponent = () => {
 
   const handleStepClick = (index) => {
     // console.log("finishAnalysis 확인 : ", finishAnalysis);
-
-    if (index === activeStep) return;
-
-    const currentStep = steps[step];
-
-    // console.log("현재 스테퍼 : ", currentStep);
-
-    //------------------------------------ 스테퍼 상향할때 설정 ---------------------
-    if (index > activeStep) {
-      //--------------------------------- 각 스텝 별 제한 조건
-      if (currentStep === "SBOM" && !sbomFile) {
-        alert("Please proceed once the SBOM generation is complete.");
-        return;
-      }
-
-      if (currentStep === "SBOM" && steps[index] === "VEX") {
-        if (!response) {
-          alert("Please proceed Vulnerability step first.");
-          return;
-        }
-      }
-
-      if (currentStep === "SBOM" && cnepsState === "started") {
-        alert("Please proceed once the Cneps generation is complete.");
-        return;
-      }
-
-      if (currentStep === "Vulnerability" && !response) {
-        alert("Please wait the VUDDY detection is complete.");
-        return;
-      }
-
-      if (currentStep === "VEX" && !finishAnalysis) {
-        alert("Please proceed after the static analysis is complete.");
-        return;
-      }
-
-      //------------------------------- cve 아무것도 선택 안했을때
-      if (
-        currentStep === "Vulnerability" &&
-        !vexReturn?.raw_data?.length &&
-        !vexLock
-      ) {
-        const proceed = window.confirm(
-          "No CVEs have been selected. Do you still want to proceed?"
-        );
-        if (!proceed) return;
-      }
-
-      setStep(index);
-    }
-
-    // ----------------------------------- 스테퍼 하향할때 설정
-    if (index < activeStep) {
-      if (currentStep === "VEX" && !finishAnalysis) {
-        alert("Please proceed after the static analysis is complete.");
-        return;
-      }
-
-      setStep(index);
-    }
+    // if (index === activeStep) return;
+    // const currentStep = steps[step];
+    // // console.log("현재 스테퍼 : ", currentStep);
+    // //------------------------------------ 스테퍼 상향할때 설정 ---------------------
+    // if (index > activeStep) {
+    //   //--------------------------------- 각 스텝 별 제한 조건
+    //   if (currentStep === "SBOM" && !sbomFile) {
+    //     alert("Please proceed once the SBOM generation is complete.");
+    //     return;
+    //   }
+    //   if (currentStep === "SBOM" && steps[index] === "VEX") {
+    //     if (!response) {
+    //       alert("Please proceed Vulnerability step first.");
+    //       return;
+    //     }
+    //   }
+    //   if (currentStep === "SBOM" && cnepsState === "started") {
+    //     alert("Please proceed once the Cneps generation is complete.");
+    //     return;
+    //   }
+    //   if (currentStep === "Vulnerability" && !response) {
+    //     alert("Please wait the VUDDY detection is complete.");
+    //     return;
+    //   }
+    //   if (currentStep === "VEX" && !finishAnalysis) {
+    //     alert("Please proceed after the static analysis is complete.");
+    //     return;
+    //   }
+    //   //------------------------------- cve 아무것도 선택 안했을때
+    //   if (
+    //     currentStep === "Vulnerability" &&
+    //     !vexReturn?.raw_data?.length &&
+    //     !vexLock
+    //   ) {
+    //     const proceed = window.confirm(
+    //       "No CVEs have been selected. Do you still want to proceed?"
+    //     );
+    //     if (!proceed) return;
+    //   }
+    //   setStep(index);
+    // }
+    // // ----------------------------------- 스테퍼 하향할때 설정
+    // if (index < activeStep) {
+    //   if (currentStep === "VEX" && !finishAnalysis) {
+    //     alert("Please proceed after the static analysis is complete.");
+    //     return;
+    //   }
+    //   setStep(index);
+    // }
   };
 
   return (

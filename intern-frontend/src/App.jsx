@@ -12,6 +12,9 @@ import { SourceCodePage } from "./page/SourceCodePage";
 import { ComingSoon } from "./utils/ComingSoon";
 import { CssBaseline } from "@mui/material";
 
+import CdbPage from "./hatdb/cdb/CdbPage";
+import VdbPage from "./hatdb/vdb/VdbPage";
+
 // 🔹 RootLayout을 추가하여 모든 페이지에서 Header와 Footer 사용
 const RootLayout = () => {
   return (
@@ -30,8 +33,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route path="/" element={<SourceCodePage />} />
-      <Route path="/hatdb/cdb" element={<ComingSoon />} />
-      <Route path="/hatdb/vdb" element={<ComingSoon />} />
+      <Route path="/hatdb/cdb" element={<CdbPage />} />
+      <Route path="/hatdb/vdb" element={<VdbPage />} />
       <Route path="/docs" element={<ComingSoon />} />
       <Route path="/statistics" element={<ComingSoon />} />
       <Route path="/contact-us" element={<ComingSoon />} />
